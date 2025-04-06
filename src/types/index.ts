@@ -2,12 +2,18 @@
 export type Gender = 'm' | 'f' | 'unisex';
 
 export type MeaningTheme = 
+  | 'Beauty'
+  | 'Friendship'
+  | 'Immortality'
   | 'Light'
-  | 'Virtue'
-  | 'Nature'
-  | 'Celestial'
+  | 'Mind'
   | 'Mythology'
+  | 'Nature'
+  | 'Prosperity'
+  | 'Victory'
+  | 'Virtue'
   | 'Worship'
+  | 'Celestial'
   | 'Other';
 
 export type PhoneticSimplicity = 

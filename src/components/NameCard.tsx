@@ -30,6 +30,12 @@ const NameCard: React.FC<NameCardProps> = ({ name, index }) => {
     "Celestial": "bg-indigo-100 text-indigo-800",
     "Mythology": "bg-purple-100 text-purple-800",
     "Worship": "bg-red-100 text-red-800",
+    "Beauty": "bg-pink-100 text-pink-800",
+    "Friendship": "bg-blue-100 text-blue-800",
+    "Immortality": "bg-violet-100 text-violet-800",
+    "Mind": "bg-slate-100 text-slate-800",
+    "Prosperity": "bg-amber-100 text-amber-800",
+    "Victory": "bg-orange-100 text-orange-800",
     "Other": "bg-gray-100 text-gray-800"
   };
 
