@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { HindiName } from '@/types';
-import { getKoreanPronunciation } from '@/data/hindiNames';
 import { Heart } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 
@@ -15,13 +14,12 @@ interface NameCardProps {
 const NameCard: React.FC<NameCardProps> = ({ name, index }) => {
   const [isFavorite, setIsFavorite] = useState(false);
   const { toast } = useToast();
-  const koreanPronunciation = getKoreanPronunciation(name.name);
   
   const toggleFavorite = () => {
     setIsFavorite(!isFavorite);
     toast({
       title: !isFavorite ? "즐겨찾기에 추가되었습니다" : "즐겨찾기에서 제거되었습니다",
-      description: !isFavorite ? `${name.name} (${koreanPronunciation})` : "",
+      description: !isFavorite ? name.name : "",
     });
   };
 
@@ -38,23 +36,20 @@ const NameCard: React.FC<NameCardProps> = ({ name, index }) => {
   // Animation delay based on index
   const animationDelay = `${index * 150}ms`;
   
-  // Define animation keyframes as a string
-  const keyframesStyle = `
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  `;
-
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: keyframesStyle }} />
+      <style dangerouslySetInnerHTML={{ __html: `
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}} />
       <Card 
         className="border border-hindi-gold/30 overflow-hidden shadow-md relative transition-all duration-300 hover:shadow-lg group"
         style={{ 
@@ -69,7 +64,7 @@ const NameCard: React.FC<NameCardProps> = ({ name, index }) => {
           <div className="flex justify-between items-start">
             <div>
               <CardTitle className="text-xl font-bold">{name.name}</CardTitle>
-              <CardDescription className="mt-1 text-base">{koreanPronunciation}</CardDescription>
+              <CardDescription className="mt-1 text-base">{name.devanagari}</CardDescription>
             </div>
             <div className="text-lg font-hindi opacity-70 text-hindi-orange">
               {name.devanagari}
