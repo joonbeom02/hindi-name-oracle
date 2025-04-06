@@ -25,7 +25,7 @@ const Index = () => {
       <div className="container px-4 py-12 max-w-6xl">
         <header className="mb-12 text-center">
           <h1 className="text-3xl md:text-5xl font-bold mb-4 gradient-text">
-            힌디어 이름 오라클
+            힌디어 이름 짓기
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mx-auto max-w-3xl">
             당신의 취향과 선호도에 맞는 아름다운 힌디어 이름을 찾아보세요
@@ -43,7 +43,7 @@ const Index = () => {
         </div>
         
         <footer className="mt-16 text-center text-sm text-muted-foreground">
-          <p>힌디어 이름 오라클 &copy; {new Date().getFullYear()} - 인도의 전통과 문화를 담은 이름 추천 서비스</p>
+          <p>힌디어 이름 짓기 &copy; {new Date().getFullYear()} - 인도의 전통과 문화를 담은 이름 추천 서비스</p>
         </footer>
       </div>
     </div>
