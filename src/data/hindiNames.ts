@@ -333,7 +333,7 @@ export const getKoreanPronunciation = (name: string): string => {
     'ir': '이르',
     'ur': '우르',
     'er': '에르',
-    'or': '오르',
+    'or': '오르'
   };
   
   // This is a simplified approximation
@@ -361,7 +361,7 @@ export const getKoreanPronunciation = (name: string): string => {
     'priya': '프리야',
     'veda': '베다',
     'akash': '아카쉬',
-    'indra': '인드라',
+    'indra': '인드라'
   };
   
   if (customPronunciations[name.toLowerCase()]) {
