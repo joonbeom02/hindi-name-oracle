@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -7,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { MeaningTheme, PhoneticSimplicity, QuizAnswers, Gender, Usage } from '@/types';
 import { useToast } from "@/hooks/use-toast";
+import { meaningThemes, themeDescriptions } from '@/data/constants';
 
 type NameQuizProps = {
   onComplete: (answers: QuizAnswers) => void;
@@ -104,7 +104,7 @@ const NameQuiz: React.FC<NameQuizProps> = ({ onComplete }) => {
             <CardContent className="pt-6">
               <p className="mb-4 text-muted-foreground">이름의 의미에서 중요하게 생각하는 주제를 선택하세요 (여러 개 선택 가능)</p>
               <div className="grid grid-cols-2 gap-3">
-                {(['Light', 'Virtue', 'Nature', 'Celestial', 'Mythology', 'Worship', 'Other'] as MeaningTheme[]).map((theme) => (
+                {meaningThemes.map((theme) => (
                   <Button
                     key={theme}
                     variant={answers.meaningTheme.includes(theme) ? "default" : "outline"}
@@ -114,13 +114,7 @@ const NameQuiz: React.FC<NameQuizProps> = ({ onComplete }) => {
                     <div>
                       <div className="font-medium">{theme}</div>
                       <div className="text-xs text-left mt-1 font-normal">
-                        {theme === 'Light' && '빛, 광명, 태양'}
-                        {theme === 'Virtue' && '미덕, 용기, 지혜, 사랑'}
-                        {theme === 'Nature' && '자연, 지구, 식물'}
-                        {theme === 'Celestial' && '하늘, 천체, 별, 달'}
-                        {theme === 'Mythology' && '신화, 전설적 인물'}
-                        {theme === 'Worship' && '종교, 신성한 의식'}
-                        {theme === 'Other' && '기타 주제'}
+                        {themeDescriptions[theme]}
                       </div>
                     </div>
                   </Button>

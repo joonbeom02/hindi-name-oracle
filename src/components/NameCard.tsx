@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { HindiName } from '@/types';
+import { HindiName, MeaningTheme } from '@/types';
 import { Heart } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 
